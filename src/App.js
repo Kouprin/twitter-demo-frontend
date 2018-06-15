@@ -29,7 +29,7 @@ const header_data = [
 
 function Header() {
   return (
-    <header className="Header">
+    <div className="Header">
       <div className="Header-nav">
         <HeaderNavPair src={header_data[0][0]} text={header_data[0][1]} />
         <HeaderNavPair src={header_data[1][0]} text={header_data[1][1]} />
@@ -61,14 +61,14 @@ function Header() {
         </div>
         <div className="Header-menu-tweet">Tweet</div>
       </div>
-    </header>
+    </div>
   );
 }
 
 function Cover() {
   return (
     <div className="Cover">
-      <img src={process.env.PUBLIC_URL + "cover.png"} />
+      <img className="Cover-image" src={process.env.PUBLIC_URL + "cover.png"} />
     </div>
   );
 }
@@ -141,6 +141,16 @@ function Statistics() {
   );
 }
 
+function LeftColumn() {
+  return (
+    <div className="LeftColumn">
+      <div className="LeftColumn-avatar">
+        <img className="LeftColumn-avatar-image" src={avatar} alt="avatar" />
+      </div>
+    </div>
+  );
+}
+
 class App extends Component {
   render() {
     return (
@@ -148,6 +158,7 @@ class App extends Component {
         <Header />
         <Cover />
         <Statistics />
+        <LeftColumn />
       </div>
     );
   }

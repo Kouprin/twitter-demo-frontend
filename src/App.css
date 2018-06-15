@@ -20,9 +20,11 @@ html {
   position: absolute;
   left: 0%;
   top: 0%;
-  width: 100%;
-  bottom: 45px;
+  width: 1500px;
+  height: 45px;
+  background-color: #ffffff;
   display: flex;
+  fill: solid;
 }
 
 .Header-nav {
@@ -107,19 +109,24 @@ html {
 .Cover {
   position: absolute;
   top: 45px;
-  height: 100%;
+  height: 380px;
+  overflow: hidden;
   width: auto;
+}
+
+.Cover-image {
 }
 
 .Statistics {
   position: absolute;
   left: 0%;
-  top: 30%;
+  top: 425px;
   height: 60px;
-  width: 100%;
+  width: 1500px;
   background: #ffffff;
   box-shadow: 0px 2px 2px #b0b8be;
   display: flex;
+  fill: solid;
 }
 
 .Statistics-nav {
@@ -248,4 +255,30 @@ html {
 
 .Statistics-menu-more-oval {
   padding-top: 1px;
+}
+
+.LeftColumn {
+  position: absolute;
+  top: 302px;
+  left: 174px;
+  width: 265px;
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.LeftColumn-avatar {
+  width: 208px;
+  height: 208px;
+  background: #ffffff;
+  border: 1px solid #e7ecf0;
+  box-sizing: border-box;
+  border-radius: 100px;
+}
+
+.LeftColumn-avatar-image {
+  width: 208px;
+  height: 208px;
+  border-radius: 100px;
 }
