@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import styled, { css } from "styled-components";
 import icon_home from "./icon_home.svg";
 import icon_moments from "./icon_moments.svg";
 import icon_notifications from "./icon_notifications.svg";
@@ -7,12 +8,14 @@ import icon_twitter from "./icon_twitter.svg";
 import rectangle from "./rectangle.svg";
 import icon_magnifier from "./icon_magnifier.svg";
 import avatar from "./avatar.svg";
+import avatar_mid from "./avatar_mid.svg";
 import avatar_small from "./avatar_small.svg";
 import oval from "./oval.svg";
 import tick from "./tick.svg";
 import icon_location from "./icon_location.svg";
 import icon_link from "./icon_link.svg";
 import icon_joined from "./icon_joined.svg";
+import icon_pinned from "./icon_pinned.svg";
 import "./App.css";
 
 function HeaderNavPair(props) {
@@ -233,6 +236,170 @@ function LeftColumn() {
   );
 }
 
+const tab_data = [
+  ["Tweets", true],
+  ["Tweets & replies", false],
+  ["Media", false]
+];
+
+function TabNav(props) {
+  if (props.active)
+    return <div className="Middle-tab-nav-active">{props.text}</div>;
+  else return <div className="Middle-tab-nav">{props.text}</div>;
+}
+
+function Tab(props) {
+  return (
+    <div className="Middle-tab">
+      <TabNav text={tab_data[0][0]} active={tab_data[0][1]} />
+      <TabNav text={tab_data[1][0]} active={tab_data[1][1]} />
+      <TabNav text={tab_data[2][0]} active={tab_data[2][1]} />
+    </div>
+  );
+}
+
+// tweet_data:
+// 0. is pinned, boolean
+// 1. avatar, obj
+// 2. author, string
+// 3. author short, string
+// 4. date, string
+// 5. text content, string
+// 6. is font large, boolean
+// 7. image, string
+// 8. comments, int
+// 9. retweets, int
+// 10. likes, int
+// 11. is liked, boolean
+
+const tweet_data = [
+  [
+    true,
+    avatar_mid,
+    "Every Interaction",
+    "@EveryInteract",
+    "• 2 Mar 2015",
+    "We’ve made some more resources for all you wonderful #design folk everyinteraction.com/resources/ #webdesign #UI",
+    true,
+    undefined,
+    0,
+    17,
+    47,
+    true
+  ],
+  [
+    false,
+    avatar_mid,
+    "Every Interaction",
+    "@EveryInteract",
+    "• 2 Mar 2015",
+    "We’ve made some more resources for all you wonderful #design folk everyinteraction.com/resources/ #webdesign #UI",
+    false,
+    undefined,
+    0,
+    17,
+    47,
+    true
+  ]
+];
+
+function TweetLeft(props) {
+  if (props.pinned)
+    return (
+      <div className="Middle-tweet-data-left">
+        <img
+          className="Middle-tweet-data-left-pinned"
+          src={icon_pinned}
+          alt="icon_pinned"
+        />
+        <img
+          className="Middle-tweet-data-left-avatar"
+          src={props.avatar}
+          alt="avatar_mid"
+        />
+      </div>
+    );
+  else
+    return (
+      <div className="Middle-tweet-data-left">
+        <img
+          className="Middle-tweet-data-left-avatar"
+          src={props.avatar}
+          alt="avatar_mid"
+        />
+      </div>
+    );
+}
+
+function TweetRightPinned(props) {
+  if (props.pinned)
+    return <div className="Middle-tweet-data-right-pinned">Pinned Tweet</div>;
+  else return <div />;
+}
+
+function TweetRightAuthor(props) {
+  return (
+    <div className="Middle-tweet-data-right-author">
+      <div className="Middle-tweet-data-right-author-text">{props.author}</div>
+      <div className="Middle-tweet-data-right-author-short">
+        {props.author_short}
+      </div>
+      <div className="Middle-tweet-data-right-author-date">{props.date}</div>
+    </div>
+  );
+}
+
+const TweetRightText = styled.a`
+  font-family: HelveticaNeue;
+  line-height: 22px;
+  font-size: 16px;
+  letter-spacing: -0.22px;
+  color: #292f33;
+  ${props =>
+    props.big &&
+    css`
+      letter-spacing: 0.38px;
+      line-height: 30px;
+      font-size: 25px;
+    `};
+`;
+
+function TweetRight(props) {
+  return (
+    <div className="Middle-tweet-data-right">
+      <TweetRightPinned pinned={props.data[0]} />
+      <TweetRightAuthor
+        author={props.data[2]}
+        author_short={props.data[3]}
+        date={props.data[4]}
+      />
+      <TweetRightText big={props.data[6]}>{props.data[5]}</TweetRightText>
+    </div>
+  );
+}
+
+function Tweet(props) {
+  return (
+    <div className="Middle-tweet">
+      <div className="Middle-tweet-line" />
+      <div className="Middle-tweet-data">
+        <TweetLeft pinned={props.data[0]} avatar={props.data[1]} />
+        <TweetRight data={props.data} />
+      </div>
+    </div>
+  );
+}
+
+function Middle(props) {
+  return (
+    <div className="Middle">
+      <Tab />
+      <Tweet data={tweet_data[0]} />
+      <Tweet data={tweet_data[1]} />
+    </div>
+  );
+}
+
 class App extends Component {
   render() {
     return (
@@ -241,6 +408,7 @@ class App extends Component {
         <Cover />
         <Statistics />
         <LeftColumn />
+        <Middle />
       </div>
     );
   }
