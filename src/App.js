@@ -9,6 +9,10 @@ import icon_magnifier from "./icon_magnifier.svg";
 import avatar from "./avatar.svg";
 import avatar_small from "./avatar_small.svg";
 import oval from "./oval.svg";
+import tick from "./tick.svg";
+import icon_location from "./icon_location.svg";
+import icon_link from "./icon_link.svg";
+import icon_joined from "./icon_joined.svg";
 import "./App.css";
 
 function HeaderNavPair(props) {
@@ -74,7 +78,7 @@ function Cover() {
 }
 
 function StatisticsNavPair(props) {
-  if (props.active == true)
+  if (props.active)
     return (
       <div className="Statistics-nav-pair">
         <div className="Statistics-nav-pair-active-text">{props.text}</div>
@@ -102,6 +106,7 @@ const statistics_data = [
 function Statistics() {
   return (
     <div className="Statistics">
+      <div className="Statistics-empty" />
       <div className="Statistics-nav">
         <StatisticsNavPair
           text={statistics_data[0][0]}
@@ -141,11 +146,88 @@ function Statistics() {
   );
 }
 
+function Author(props) {
+  if (props.tick)
+    return (
+      <div className="LeftColumn-author">
+        <div className="LeftColumn-author-name">{props.name}</div>
+        <img className="LeftColumn-author-tick" src={tick} alt="tick" />
+      </div>
+    );
+  else
+    return (
+      <div className="LeftColumn-author">
+        <div className="LeftColumn-author-name">{props.name}</div>
+      </div>
+    );
+}
+
+function AuthorShort(props) {
+  return (
+    <div className="LeftColumn-authorShort">
+      <div className="LeftColumn-authorShort-name">{props.name}</div>
+      <div className="LeftColumn-authorShort-follows">{props.follows}</div>
+    </div>
+  );
+}
+
+const description_text =
+  "UX Design studio focussed problem solving creativity. Design to us is how can we make things *work* amazing.";
+
+function Description(props) {
+  return (
+    <div className="LeftColumn-description">
+      <div className="LeftColumn-description-text">{props.text}</div>
+    </div>
+  );
+}
+
+function ContactsRow(props) {
+  if (props.text == undefined) return <div />;
+  else
+    return (
+      <div className="LeftColumn-contacts-row">
+        <img
+          className="LeftColumn-contacts-row-icon"
+          src={props.icon}
+          alt={props.icon}
+        />
+        <div className="LeftColumn-contacts-row-text">{props.text}</div>
+      </div>
+    );
+}
+
+function Contacts(props) {
+  return (
+    <div className="LeftColumn-contacts">
+      <ContactsRow text={props.location} icon={icon_location} />
+      <ContactsRow text={props.link} icon={icon_link} />
+      <ContactsRow text={props.joined} icon={icon_joined} />
+    </div>
+  );
+}
+
+function Button(props) {
+  return <div className="LeftColumn-buttons-instance">{props.text}</div>;
+}
+
 function LeftColumn() {
   return (
     <div className="LeftColumn">
       <div className="LeftColumn-avatar">
         <img className="LeftColumn-avatar-image" src={avatar} alt="avatar" />
+      </div>
+      <Author name="Every Interaction" tick={true} />
+      <AuthorShort name="@EveryInteract" follows="Follows you" />
+      <Description text={description_text} />
+      <Contacts
+        location="London, UK"
+        link="everyinteraction.com"
+        joined="Joined May 2008"
+      />
+      <div className="LeftColumn-buttons">
+        <Button text="Tweet to" />
+        <Button text="Message" />
       </div>
     </div>
   );
