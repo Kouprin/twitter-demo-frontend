@@ -320,9 +320,9 @@ const tweet_data = [
     avatar: avatar_mid,
     author: "Every Interaction",
     author_short: "@EveryInteract",
-    date: "• 2 Mar 2015",
+    date: "2 Mar 2015",
     text:
-      "We’ve made some more resources for all you wonderful #design folk everyinteraction.com/resources/ #webdesign #UI",
+      "We’ve made some more resources for all you wonderful <a href='#'>#design</a> folk <a href='http://everyinteraction.com/resources/'>everyinteraction.com/resources/</a> <a href='#'>#webdesign</a> <a href='#'>#UI</a>",
     is_big: true,
     image: process.env.PUBLIC_URL + "cover.png",
     comments: undefined,
@@ -337,7 +337,7 @@ const tweet_data = [
     author_short: "@EveryInteract",
     date: "23h",
     text:
-      "Our new website concept; Taking you from… @ Every Interaction instagram.com/p/BNFGrfhBP3M/",
+      "Our new website concept; Taking you from… @ Every Interaction <a href='http://instagram.com/p/BNFGrfhBP3M/'>instagram.com/p/BNFGrfhBP3M/</a>",
     is_big: true,
     image: undefined,
     comments: 55,
@@ -403,6 +403,7 @@ function TweetRightAuthor(props) {
       <div className="Middle-tweet-data-right-author-short">
         {props.author_short}
       </div>
+      <div className="Middle-tweet-data-right-author-divider">•</div>
       <div className="Middle-tweet-data-right-author-date">{props.date}</div>
     </div>
   );
@@ -484,9 +485,10 @@ function TweetRight(props) {
         author_short={props.data["author_short"]}
         date={props.data["date"]}
       />
-      <TweetRightText big={props.data["is_big"]}>
-        {props.data["text"]}
-      </TweetRightText>
+      <TweetRightText
+        big={props.data["is_big"]}
+        dangerouslySetInnerHTML={{ __html: props.data["text"] }}
+      />
       {props.data["image"] ? (
         <TweetRightImage src={props.data["image"]} />
       ) : (

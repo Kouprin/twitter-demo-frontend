@@ -2,15 +2,15 @@ html {
   box-sizing: border-box;
 }
 
-.a {
-  text-decoration: none;
-}
-
 *,
 *:before,
 *:after {
   box-sizing: inherit;
-  text-decoration: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: #1da1f2;
 }
 
 .Desktop {
@@ -480,6 +480,7 @@ html {
 }
 
 .Middle-tweet-data-right-author-text {
+  margin-right: 6px;
   font-family: HelveticaNeue;
   line-height: 30px;
   font-size: 15px;
@@ -488,11 +489,18 @@ html {
 }
 
 .Middle-tweet-data-right-author-short {
-  margin-left: 4px;
-  margin-right: 4px;
   font-family: Helvetica Neue;
   line-height: 21px;
   font-size: 13px;
+  letter-spacing: 0.01px;
+  color: #697787;
+}
+
+.Middle-tweet-data-right-author-divider {
+  margin: 3px;
+  font-family: Helvetica Neue;
+  line-height: 21px;
+  font-size: 19px;
   letter-spacing: 0.01px;
   color: #697787;
 }
