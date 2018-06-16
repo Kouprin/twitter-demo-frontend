@@ -190,6 +190,21 @@ function Description(props) {
   );
 }
 
+const LeftColumnContactsRowText = styled.div`
+  margin-left: 16px;
+  font-family: HelveticaNeue;
+  line-height: 28px;
+  font-size: 14px;
+  letter-spacing: 0.0107692px;
+
+  color: #657786;
+  ${props =>
+    props.is_link &&
+    css`
+      color: #1da1f2;
+    `};
+`;
+
 function ContactsRow(props) {
   if (props.text == undefined) return <div />;
   else
@@ -200,7 +215,9 @@ function ContactsRow(props) {
           src={props.icon}
           alt={props.icon}
         />
-        <div className="LeftColumn-contacts-row-text">{props.text}</div>
+        <LeftColumnContactsRowText is_link={props.is_link}>
+          {props.text}
+        </LeftColumnContactsRowText>
       </div>
     );
 }
@@ -209,7 +226,7 @@ function Contacts(props) {
   return (
     <div className="LeftColumn-contacts">
       <ContactsRow text={props.location} icon={icon_location} />
-      <ContactsRow text={props.link} icon={icon_link} />
+      <ContactsRow text={props.link} icon={icon_link} is_link={true} />
       <ContactsRow text={props.joined} icon={icon_joined} />
     </div>
   );
