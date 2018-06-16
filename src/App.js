@@ -16,6 +16,11 @@ import icon_location from "./icon_location.svg";
 import icon_link from "./icon_link.svg";
 import icon_joined from "./icon_joined.svg";
 import icon_pinned from "./icon_pinned.svg";
+import icon_comments from "./icon_comments.svg";
+import icon_retweet from "./icon_retweet.svg";
+import icon_loves from "./icon_loves.svg";
+import icon_loved from "./icon_loved.svg";
+import icon_envelope from "./icon_envelope.svg";
 import "./App.css";
 
 function HeaderNavPair(props) {
@@ -269,8 +274,8 @@ function Tab(props) {
 // 7. image, string
 // 8. comments, int
 // 9. retweets, int
-// 10. likes, int
-// 11. is liked, boolean
+// 10. loves, int
+// 11. is loved, boolean
 
 const tweet_data = [
   [
@@ -281,8 +286,8 @@ const tweet_data = [
     "• 2 Mar 2015",
     "We’ve made some more resources for all you wonderful #design folk everyinteraction.com/resources/ #webdesign #UI",
     true,
+    process.env.PUBLIC_URL + "cover.png",
     undefined,
-    0,
     17,
     47,
     true
@@ -292,14 +297,28 @@ const tweet_data = [
     avatar_mid,
     "Every Interaction",
     "@EveryInteract",
-    "• 2 Mar 2015",
-    "We’ve made some more resources for all you wonderful #design folk everyinteraction.com/resources/ #webdesign #UI",
-    false,
+    "• 23h",
+    "Our new website concept; Taking you from… @ Every Interaction instagram.com/p/BNFGrfhBP3M/",
+    true,
     undefined,
-    0,
-    17,
-    47,
-    true
+    55,
+    12345,
+    4,
+    false
+  ],
+  [
+    false,
+    avatar_mid,
+    "Every Interaction",
+    "@EveryInteract",
+    "• Nov 18",
+    "Variable web fonts are coming, and will open a world of opportunities for weight use online",
+    false,
+    process.env.PUBLIC_URL + "cover.png",
+    undefined,
+    undefined,
+    undefined,
+    false
   ]
 ];
 
@@ -349,7 +368,7 @@ function TweetRightAuthor(props) {
   );
 }
 
-const TweetRightText = styled.a`
+const TweetRightText = styled.div`
   font-family: HelveticaNeue;
   line-height: 22px;
   font-size: 16px;
@@ -364,6 +383,58 @@ const TweetRightText = styled.a`
     `};
 `;
 
+const TweetRightActionsPairNumber = styled.div`
+  padding: 4px;
+  margin-left: 4px;
+  font-family: HelveticaNeue;
+  line-height: normal;
+  font-size: 13px;
+  letter-spacing: -0.2px;
+  font-weight: 600;
+  color: #667580;
+  ${props =>
+    props.is_loved &&
+    css`
+      color: #e2264d;
+    `};
+`;
+
+function TweetRightActionPair(props) {
+  return (
+    <div className="Middle-tweet-data-right-actions-pair">
+      <img
+        className="Middle-tweet-data-right-actions-pair-icon"
+        src={props.is_loved ? icon_loved : props.icon}
+        alt={props.icon}
+      />
+      <TweetRightActionsPairNumber is_loved={props.is_loved}>
+        {props.number}
+      </TweetRightActionsPairNumber>
+    </div>
+  );
+}
+
+function TweetRightActions(props) {
+  return (
+    <div className="Middle-tweet-data-right-actions">
+      <TweetRightActionPair icon={icon_comments} number={props.comments} />
+      <TweetRightActionPair icon={icon_retweet} number={props.retweets} />
+      <TweetRightActionPair
+        icon={icon_loves}
+        number={props.loves}
+        is_loved={props.is_loved}
+      />
+      <TweetRightActionPair icon={icon_envelope} />
+    </div>
+  );
+}
+
+const TweetRightImage = styled.img`
+  margin-top: 8px;
+  width: 506px;
+  height: auto;
+`;
+
 function TweetRight(props) {
   return (
     <div className="Middle-tweet-data-right">
@@ -374,6 +445,13 @@ function TweetRight(props) {
         date={props.data[4]}
       />
       <TweetRightText big={props.data[6]}>{props.data[5]}</TweetRightText>
+      {props.data[7] ? <TweetRightImage src={props.data[7]} /> : <div />}
+      <TweetRightActions
+        comments={props.data[8]}
+        retweets={props.data[9]}
+        loves={props.data[10]}
+        is_loved={props.data[11]}
+      />
     </div>
   );
 }
@@ -396,6 +474,7 @@ function Middle(props) {
       <Tab />
       <Tweet data={tweet_data[0]} />
       <Tweet data={tweet_data[1]} />
+      <Tweet data={tweet_data[2]} />
     </div>
   );
 }
