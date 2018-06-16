@@ -1,27 +1,27 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
-import { Redirect, BrowserRouter, Switch } from "react-router-dom";
+import { Redirect, BrowserRouter, Switch, Route } from "react-router-dom";
 import styled, { css } from "styled-components";
-import icon_home from "./icon_home.svg";
-import icon_moments from "./icon_moments.svg";
-import icon_notifications from "./icon_notifications.svg";
-import icon_messages from "./icon_messages.svg";
-import icon_twitter from "./icon_twitter.svg";
-import icon_magnifier from "./icon_magnifier.svg";
+import iconHome from "./icon-home.svg";
+import iconMoments from "./icon-moments.svg";
+import iconNotifications from "./icon-notifications.svg";
+import iconMessages from "./icon-messages.svg";
+import iconTwitter from "./icon-twitter.svg";
+import iconMagnifier from "./icon-magnifier.svg";
 import avatar from "./avatar.svg";
-import avatar_mid from "./avatar_mid.svg";
-import avatar_small from "./avatar_small.svg";
+import avatarMid from "./avatar-mid.svg";
+import avatarSmall from "./avatar-small.svg";
 import oval from "./oval.svg";
 import tick from "./tick.svg";
-import icon_location from "./icon_location.svg";
-import icon_link from "./icon_link.svg";
-import icon_joined from "./icon_joined.svg";
-import icon_pinned from "./icon_pinned.svg";
-import icon_comments from "./icon_comments.svg";
-import icon_retweet from "./icon_retweet.svg";
-import icon_loves from "./icon_loves.svg";
-import icon_loved from "./icon_loved.svg";
-import icon_envelope from "./icon_envelope.svg";
+import iconLocation from "./icon-location.svg";
+import iconLink from "./icon-link.svg";
+import iconJoined from "./icon-joined.svg";
+import iconPinned from "./icon-pinned.svg";
+import iconComments from "./icon-comments.svg";
+import iconRetweet from "./icon-retweet.svg";
+import iconLoves from "./icon-loves.svg";
+import iconLoved from "./icon-loved.svg";
+import iconEnvelope from "./icon-envelope.svg";
 import "./App.css";
 
 function HeaderNavPair(props) {
@@ -33,11 +33,11 @@ function HeaderNavPair(props) {
   );
 }
 
-const header_data = {
-  home: { icon: icon_home, text: "Home" },
-  moments: { icon: icon_moments, text: "Moments" },
-  notifications: { icon: icon_notifications, text: "Notifications" },
-  messages: { icon: icon_messages, text: "Messages" }
+const headerData = {
+  home: { icon: iconHome, text: "Home" },
+  moments: { icon: iconMoments, text: "Moments" },
+  notifications: { icon: iconNotifications, text: "Notifications" },
+  messages: { icon: iconMessages, text: "Messages" }
 };
 
 const HeaderMenuTweet = styled.div`
@@ -70,24 +70,24 @@ function Header() {
     <div className="Header">
       <div className="Header-nav">
         <HeaderNavPair
-          src={header_data["home"]["icon"]}
-          text={header_data["home"]["text"]}
+          src={headerData["home"]["icon"]}
+          text={headerData["home"]["text"]}
         />
         <HeaderNavPair
-          src={header_data["moments"]["icon"]}
-          text={header_data["moments"]["text"]}
+          src={headerData["moments"]["icon"]}
+          text={headerData["moments"]["text"]}
         />
         <HeaderNavPair
-          src={header_data["notifications"]["icon"]}
-          text={header_data["notifications"]["text"]}
+          src={headerData["notifications"]["icon"]}
+          text={headerData["notifications"]["text"]}
         />
         <HeaderNavPair
-          src={header_data["messages"]["icon"]}
-          text={header_data["messages"]["text"]}
+          src={headerData["messages"]["icon"]}
+          text={headerData["messages"]["text"]}
         />
       </div>
       <a href="http://twitter.com">
-        <HeaderTwitter src={icon_twitter} alt="icon_twitter" />
+        <HeaderTwitter src={iconTwitter} alt="iconTwitter" />
       </a>
 
       <div className="Header-menu">
@@ -95,11 +95,11 @@ function Header() {
           <div className="Header-menu-search-text">Search Twitter</div>
           <img
             className="Header-menu-search-magnifier"
-            src={icon_magnifier}
-            alt="icon_magnifier"
+            src={iconMagnifier}
+            alt="iconMagnifier"
           />
         </div>
-        <HeaderMenuAvatar src={avatar_small} alt="avatar_small" />
+        <HeaderMenuAvatar src={avatarSmall} alt="avatarSmall" />
         <HeaderMenuTweet>Tweet</HeaderMenuTweet>
       </div>
     </div>
@@ -136,12 +136,12 @@ function StatisticsNavPair(props) {
     );
 }
 
-const statistics_data = {
-  tweets: { text: "Tweets", count: "8,058", is_active: true },
-  following: { text: "Following", count: "721", is_active: false },
-  followers: { text: "Followers", count: "1,815", is_active: false },
-  likes: { text: "Likes", count: "460", is_active: false },
-  lists: { text: "Lists", count: "2", is_active: false }
+const statisticsData = {
+  tweets: { text: "Tweets", count: "8,058", isActive: true },
+  following: { text: "Following", count: "721", isActive: false },
+  followers: { text: "Followers", count: "1,815", isActive: false },
+  likes: { text: "Likes", count: "460", isActive: false },
+  lists: { text: "Lists", count: "2", isActive: false }
 };
 
 function Statistics() {
@@ -150,29 +150,29 @@ function Statistics() {
       <div className="Statistics-empty" />
       <div className="Statistics-nav">
         <StatisticsNavPair
-          text={statistics_data["tweets"]["text"]}
-          count={statistics_data["tweets"]["count"]}
-          active={statistics_data["tweets"]["is_active"]}
+          text={statisticsData["tweets"]["text"]}
+          count={statisticsData["tweets"]["count"]}
+          active={statisticsData["tweets"]["isActive"]}
         />
         <StatisticsNavPair
-          text={statistics_data["following"]["text"]}
-          count={statistics_data["following"]["count"]}
-          active={statistics_data["following"]["is_active"]}
+          text={statisticsData["following"]["text"]}
+          count={statisticsData["following"]["count"]}
+          active={statisticsData["following"]["isActive"]}
         />
         <StatisticsNavPair
-          text={statistics_data["followers"]["text"]}
-          count={statistics_data["followers"]["count"]}
-          active={statistics_data["followers"]["is_active"]}
+          text={statisticsData["followers"]["text"]}
+          count={statisticsData["followers"]["count"]}
+          active={statisticsData["followers"]["isActive"]}
         />
         <StatisticsNavPair
-          text={statistics_data["likes"]["text"]}
-          count={statistics_data["likes"]["count"]}
-          active={statistics_data["likes"]["is_active"]}
+          text={statisticsData["likes"]["text"]}
+          count={statisticsData["likes"]["count"]}
+          active={statisticsData["likes"]["isActive"]}
         />
         <StatisticsNavPair
-          text={statistics_data["lists"]["text"]}
-          count={statistics_data["lists"]["count"]}
-          active={statistics_data["lists"]["is_active"]}
+          text={statisticsData["lists"]["text"]}
+          count={statisticsData["lists"]["count"]}
+          active={statisticsData["lists"]["isActive"]}
         />
       </div>
       <div className="Statistics-menu">
@@ -212,7 +212,7 @@ function AuthorShort(props) {
   );
 }
 
-const description_text =
+const descriptionText =
   "UX Design studio focussed problem solving creativity. Design to us is how can we make things *work* amazing.";
 
 function Description(props) {
@@ -232,7 +232,7 @@ const LeftColumnContactsRowText = styled.a`
 
   color: #657786;
   ${props =>
-    props.is_link &&
+    props.isLink &&
     css`
       color: #1da1f2;
     `};
@@ -249,8 +249,8 @@ function ContactsRow(props) {
           alt={props.icon}
         />
         <LeftColumnContactsRowText
-          href={props.is_link ? "http://" + props.text : undefined}
-          is_link={props.is_link}
+          href={props.isLink ? "http://" + props.text : undefined}
+          isLink={props.isLink}
         >
           {props.text}
         </LeftColumnContactsRowText>
@@ -261,9 +261,9 @@ function ContactsRow(props) {
 function Contacts(props) {
   return (
     <div className="LeftColumn-contacts">
-      <ContactsRow text={props.location} icon={icon_location} />
-      <ContactsRow text={props.link} icon={icon_link} is_link={true} />
-      <ContactsRow text={props.joined} icon={icon_joined} />
+      <ContactsRow text={props.location} icon={iconLocation} />
+      <ContactsRow text={props.link} icon={iconLink} isLink={true} />
+      <ContactsRow text={props.joined} icon={iconJoined} />
     </div>
   );
 }
@@ -280,7 +280,7 @@ function LeftColumn() {
       </div>
       <Author name="Every Interaction" tick={true} />
       <AuthorShort name="@EveryInteract" follows="Follows you" />
-      <Description text={description_text} />
+      <Description text={descriptionText} />
       <Contacts
         location="London, UK"
         link="everyinteraction.com"
@@ -294,7 +294,7 @@ function LeftColumn() {
   );
 }
 
-const tab_data = [
+const tabData = [
   ["Tweets", true],
   ["Tweets & replies", false],
   ["Media", false]
@@ -309,58 +309,58 @@ function TabNav(props) {
 function Tab(props) {
   return (
     <div className="Middle-tab">
-      <TabNav text={tab_data[0][0]} active={tab_data[0][1]} />
-      <TabNav text={tab_data[1][0]} active={tab_data[1][1]} />
-      <TabNav text={tab_data[2][0]} active={tab_data[2][1]} />
+      <TabNav text={tabData[0][0]} active={tabData[0][1]} />
+      <TabNav text={tabData[1][0]} active={tabData[1][1]} />
+      <TabNav text={tabData[2][0]} active={tabData[2][1]} />
     </div>
   );
 }
 
-const tweet_data = [
+const tweetData = [
   {
-    is_pinned: true,
-    avatar: avatar_mid,
+    isPinned: true,
+    avatar: avatarMid,
     author: "Every Interaction",
-    author_short: "@EveryInteract",
+    authorShort: "@EveryInteract",
     date: "2 Mar 2015",
     text:
       "We’ve made some more resources for all you wonderful <a href='#'>#design</a> folk <a href='http://everyinteraction.com/resources/'>everyinteraction.com/resources/</a> <a href='#'>#webdesign</a> <a href='#'>#UI</a>",
-    is_big: true,
+    isBig: true,
     image: process.env.PUBLIC_URL + "cover.png",
     comments: undefined,
     retweets: 17,
     loves: 47,
-    is_loved: true
+    isLoved: true
   },
   {
-    is_pinned: false,
-    avatar: avatar_mid,
+    isPinned: false,
+    avatar: avatarMid,
     author: "Every Interaction",
-    author_short: "@EveryInteract",
+    authorShort: "@EveryInteract",
     date: "23h",
     text:
       "Our new website concept; Taking you from… @ Every Interaction <a href='http://instagram.com/p/BNFGrfhBP3M/'>instagram.com/p/BNFGrfhBP3M/</a>",
-    is_big: true,
+    isBig: true,
     image: undefined,
     comments: 55,
     retweets: 12346,
     loves: 4,
-    is_loved: false
+    isLoved: false
   },
   {
-    is_pinned: false,
-    avatar: avatar_mid,
+    isPinned: false,
+    avatar: avatarMid,
     author: "Every Interaction",
-    author_short: "@EveryInteract",
+    authorShort: "@EveryInteract",
     date: "Nov 18",
     text:
       "Variable web fonts are coming, and will open a world of opportunities for weight use online",
-    is_big: false,
+    isBig: false,
     image: process.env.PUBLIC_URL + "cover.png",
     comments: undefined,
     retweets: undefined,
     loves: undefined,
-    is_loved: false
+    isLoved: false
   }
 ];
 
@@ -370,13 +370,13 @@ function TweetLeft(props) {
       <div className="Middle-tweet-data-left">
         <img
           className="Middle-tweet-data-left-pinned"
-          src={icon_pinned}
-          alt="icon_pinned"
+          src={iconPinned}
+          alt="iconPinned"
         />
         <img
           className="Middle-tweet-data-left-avatar"
           src={props.avatar}
-          alt="avatar_mid"
+          alt="avatarMid"
         />
       </div>
     );
@@ -386,7 +386,7 @@ function TweetLeft(props) {
         <img
           className="Middle-tweet-data-left-avatar"
           src={props.avatar}
-          alt="avatar_mid"
+          alt="avatarMid"
         />
       </div>
     );
@@ -403,7 +403,7 @@ function TweetRightAuthor(props) {
     <div className="Middle-tweet-data-right-author">
       <div className="Middle-tweet-data-right-author-text">{props.author}</div>
       <div className="Middle-tweet-data-right-author-short">
-        {props.author_short}
+        {props.authorShort}
       </div>
       <div className="Middle-tweet-data-right-author-divider">•</div>
       <div className="Middle-tweet-data-right-author-date">{props.date}</div>
@@ -436,7 +436,7 @@ const TweetRightActionsPairNumber = styled.div`
   font-weight: 600;
   color: #667580;
   ${props =>
-    props.is_loved &&
+    props.isLoved &&
     css`
       color: #e2264d;
     `};
@@ -447,10 +447,10 @@ function TweetRightActionPair(props) {
     <div className="Middle-tweet-data-right-actions-pair">
       <img
         className="Middle-tweet-data-right-actions-pair-icon"
-        src={props.is_loved ? icon_loved : props.icon}
+        src={props.isLoved ? iconLoved : props.icon}
         alt={props.icon}
       />
-      <TweetRightActionsPairNumber is_loved={props.is_loved}>
+      <TweetRightActionsPairNumber isLoved={props.isLoved}>
         {props.number}
       </TweetRightActionsPairNumber>
     </div>
@@ -460,14 +460,14 @@ function TweetRightActionPair(props) {
 function TweetRightActions(props) {
   return (
     <div className="Middle-tweet-data-right-actions">
-      <TweetRightActionPair icon={icon_comments} number={props.comments} />
-      <TweetRightActionPair icon={icon_retweet} number={props.retweets} />
+      <TweetRightActionPair icon={iconComments} number={props.comments} />
+      <TweetRightActionPair icon={iconRetweet} number={props.retweets} />
       <TweetRightActionPair
-        icon={icon_loves}
+        icon={iconLoves}
         number={props.loves}
-        is_loved={props.is_loved}
+        isLoved={props.isLoved}
       />
-      <TweetRightActionPair icon={icon_envelope} />
+      <TweetRightActionPair icon={iconEnvelope} />
     </div>
   );
 }
@@ -481,14 +481,14 @@ const TweetRightImage = styled.img`
 function TweetRight(props) {
   return (
     <div className="Middle-tweet-data-right">
-      <TweetRightPinned pinned={props.data["is_pinned"]} />
+      <TweetRightPinned pinned={props.data["isPinned"]} />
       <TweetRightAuthor
         author={props.data["author"]}
-        author_short={props.data["author_short"]}
+        authorShort={props.data["authorShort"]}
         date={props.data["date"]}
       />
       <TweetRightText
-        big={props.data["is_big"]}
+        big={props.data["isBig"]}
         dangerouslySetInnerHTML={{ __html: props.data["text"] }}
       />
       {props.data["image"] ? (
@@ -500,7 +500,7 @@ function TweetRight(props) {
         comments={props.data["comments"]}
         retweets={props.data["retweets"]}
         loves={props.data["loves"]}
-        is_loved={props.data["is_loved"]}
+        isLoved={props.data["isLoved"]}
       />
     </div>
   );
@@ -512,7 +512,7 @@ function Tweet(props) {
       <div className="Middle-tweet-line" />
       <div className="Middle-tweet-data">
         <TweetLeft
-          pinned={props.data["is_pinned"]}
+          pinned={props.data["isPinned"]}
           avatar={props.data["avatar"]}
         />
         <TweetRight data={props.data} />
@@ -525,9 +525,21 @@ function Middle(props) {
   return (
     <div className="Middle">
       <Tab />
-      <Tweet data={tweet_data[0]} />
-      <Tweet data={tweet_data[1]} />
-      <Tweet data={tweet_data[2]} />
+      <Tweet data={tweetData[0]} />
+      <Tweet data={tweetData[1]} />
+      <Tweet data={tweetData[2]} />
+    </div>
+  );
+}
+
+function Page(props) {
+  return (
+    <div className="Page">
+      <Header />
+      <Cover />
+      <Statistics />
+      <LeftColumn />
+      <Middle />
     </div>
   );
 }
@@ -536,17 +548,13 @@ class App extends Component {
   render() {
     return (
       <div className="Desktop">
+        <Helmet title="EveryInteract page" />
         <BrowserRouter>
           <Switch>
             <Redirect exact from="/" to="/EveryInteract" />
+            <Route exact path="/EveryInteract" component={Page} />
           </Switch>
         </BrowserRouter>
-        <Helmet title="EveryInteract page" />
-        <Header />
-        <Cover />
-        <Statistics />
-        <LeftColumn />
-        <Middle />
       </div>
     );
   }
