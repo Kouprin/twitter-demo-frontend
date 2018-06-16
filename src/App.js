@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Helmet from "react-helmet";
+import { Redirect, BrowserRouter, Switch } from "react-router-dom";
 import styled, { css } from "styled-components";
 import icon_home from "./icon_home.svg";
 import icon_moments from "./icon_moments.svg";
@@ -534,6 +536,12 @@ class App extends Component {
   render() {
     return (
       <div className="Desktop">
+        <BrowserRouter>
+          <Switch>
+            <Redirect exact from="/" to="/EveryInteract" />
+          </Switch>
+        </BrowserRouter>
+        <Helmet title="EveryInteract page" />
         <Header />
         <Cover />
         <Statistics />
