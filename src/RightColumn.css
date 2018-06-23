@@ -6,7 +6,7 @@
   fill: solid;
 }
 
-.RightColumn .follows-header {
+.RightColumn .header-block {
   margin-top: 16px;
   margin-left: 16px;
   margin-bottom: 8px;
@@ -16,7 +16,7 @@
   align-items: flex-end;
 }
 
-.RightColumn .follows-who {
+.RightColumn .text-header {
   line-height: 22px;
   font-size: 16px;
   letter-spacing: -0.22px;
@@ -25,7 +25,7 @@
   font-weight: 600;
 }
 
-.RightColumn .follows-divider {
+.RightColumn .divider {
   margin-left: 6px;
   margin-right: 6px;
   margin-bottom: 2px;
@@ -75,4 +75,30 @@
 
 .RightColumn .follows-people-image {
   padding: 8px;
+}
+
+.RightColumn .trends {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: #ffffff;
+  fill: solid;
+}
+
+.RightColumn .trends-trend {
+  margin-left: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.RightColumn .about {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }

@@ -1,10 +1,10 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import tick from "./tick.svg";
 import iconDelete from "./icon-delete.svg";
 import iconPeople from "./icon-people.svg";
-import { followData } from "./Data";
+import { followData, trendsData } from "./Data";
 
 import "./RightColumn.css";
 
@@ -17,11 +17,11 @@ const SmallLink = styled.a`
 
 function FollowsHeader(props) {
   return (
-    <div className="follows-header">
-      <div className="follows-who">Who to follow</div>
-      <div className="follows-divider">•</div>
+    <div className="header-block">
+      <div className="text-header">Who to follow</div>
+      <div className="divider">•</div>
       <SmallLink href="--refresh">Refresh</SmallLink>
-      <div className="follows-divider">•</div>
+      <div className="divider">•</div>
       <SmallLink href="--view all">View all</SmallLink>
     </div>
   );
@@ -134,11 +134,100 @@ function Follows(props) {
   );
 }
 
+function TrendsHeader(props) {
+  return (
+    <div className="header-block">
+      <div className="text-header">United Kingdom Trends</div>
+      <div className="divider">•</div>
+      <SmallLink href="--change">Change</SmallLink>
+    </div>
+  );
+}
+
+const TrendLink = styled.a`
+  font-family: HelveticaNeue;
+  line-height: normal;
+  line-height: 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1da1f2;
+`;
+
+const TextSmall = styled.div`
+  font-family: HelveticaNeue;
+  line-height: 22px;
+  font-size: 12px;
+  letter-spacing: 0.01px;
+  color: #687b8a;
+`;
+
+function Trend(props) {
+  return (
+    <div className="trends-trend">
+      <TrendLink href={props.trend["text"]}>{props.trend["text"]}</TrendLink>
+      {props.trend["description"] ? (
+        <TextSmall>{props.trend["description"]}</TextSmall>
+      ) : (
+        <div />
+      )}
+      {props.trend["tweets"] ? (
+        <TextSmall>{props.trend["tweets"]} Tweets</TextSmall>
+      ) : (
+        <div />
+      )}
+    </div>
+  );
+}
+
+const Empty = styled.div`
+  height: 40px;
+`;
+
+function Trends(props) {
+  return (
+    <div className="trends">
+      <TrendsHeader />
+      <Trend trend={props.trends[0]} />
+      <Trend trend={props.trends[1]} />
+      <Trend trend={props.trends[2]} />
+      <Trend trend={props.trends[3]} />
+      <Trend trend={props.trends[4]} />
+      <Empty />
+    </div>
+  );
+}
+
+const AboutLink = styled.a`
+  font-family: HelveticaNeue;
+  margin-right: 8px;
+  line-height: 18px;
+  font-size: 13px;
+  letter-spacing: -0.4px;
+  color: #718290;
+`;
+
+function About(props) {
+  return (
+    <div className="about">
+      <AboutLink>© 2018 Twitter</AboutLink>
+      <AboutLink>About</AboutLink>
+      <AboutLink>Help</AboutLink>
+      <AboutLink>Center</AboutLink>
+      <AboutLink>Terms</AboutLink>
+      <AboutLink>Privacy policy</AboutLink>
+      <AboutLink>Cookies</AboutLink>
+      <AboutLink>Ads info</AboutLink>
+    </div>
+  );
+}
+
 export function RightColumn() {
   return (
     <div className="RightColumn">
       <div />
       <Follows follows={followData} />
+      <Trends trends={trendsData} />
+      <About />
     </div>
   );
 }

@@ -70,6 +70,34 @@ export const followData = [
   }
 ];
 
+export const trendsData = [
+  {
+    text: "#BringYourDogToWorkDay",
+    tweets: undefined,
+    description: undefined
+  },
+  {
+    text: "#FridayFeeling",
+    tweets: "12.1K",
+    description: undefined
+  },
+  {
+    text: "#Brexit",
+    tweets: undefined,
+    description: "It’s one year since the UK voted to leave the European Union"
+  },
+  {
+    text: "HMS Queen Elizabeth",
+    tweets: "1,036",
+    description: undefined
+  },
+  {
+    text: "Tweets and description together",
+    tweets: "123K",
+    description: "description seems logical"
+  }
+];
+
 export const tweetData = [
   {
     isPinned: true,
