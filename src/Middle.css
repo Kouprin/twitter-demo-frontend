@@ -1,0 +1,131 @@
+.Middle .tab {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  background: #ffffff;
+}
+
+.Middle .tab-nav {
+  margin: 12px 20px 8px 16px;
+  font-family: HelveticaNeue;
+  line-height: normal;
+  font-size: 18px;
+  letter-spacing: -0.1px;
+  font-weight: 600;
+
+  color: #1da1f2;
+}
+
+.Middle .tab-nav-active {
+  margin: 12px 20px 8px 16px;
+  font-family: HelveticaNeue;
+  line-height: normal;
+  font-size: 18px;
+  letter-spacing: -0.1px;
+  font-weight: 600;
+
+  color: #000000;
+}
+
+.Middle .tweet-line {
+  height: 1px;
+  background: #e1e8ed;
+}
+
+.Middle .tweet-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.Middle .tweet-data-left {
+  flex-basis: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin: 8px;
+}
+
+.Middle .tweet-data-left-pinned {
+  margin-top: 2px;
+}
+
+.Middle .tweet-data-right {
+  display: flex;
+  flex-basis: 90%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 8px;
+  margin-right: 24px;
+}
+
+.Middle .tweet-data-right-pinned {
+  font-family: HelveticaNeue;
+  line-height: normal;
+  font-size: 12px;
+  letter-spacing: -0.175px;
+
+  color: #707e88;
+}
+
+.Middle .tweet-data-right-author {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.Middle .tweet-data-right-author-text {
+  margin-right: 6px;
+  font-family: HelveticaNeue;
+  line-height: 30px;
+  font-size: 15px;
+  letter-spacing: -0.22px;
+  font-weight: 600;
+}
+
+.Middle .tweet-data-right-author-short {
+  font-family: Helvetica Neue;
+  line-height: 21px;
+  font-size: 13px;
+  letter-spacing: 0.01px;
+  color: #697787;
+}
+
+.Middle .tweet-data-right-author-divider {
+  margin: 3px;
+  font-family: Helvetica Neue;
+  line-height: 21px;
+  font-size: 19px;
+  letter-spacing: 0.01px;
+  color: #697787;
+}
+
+.Middle .tweet-data-right-author-date {
+  font-family: Helvetica Neue;
+  line-height: 21px;
+  font-size: 13px;
+  letter-spacing: 0.01px;
+  color: #697787;
+}
+
+.Middle .tweet-data-right-actions {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.Middle .tweet-data-right-actions-pair {
+  width: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.Middle .tweet-data-right-actions-pair-icon {
+  padding: 4px;
+}
