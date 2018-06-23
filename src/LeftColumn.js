@@ -6,7 +6,9 @@ import tick from "./tick.svg";
 import iconLocation from "./icon-location.svg";
 import iconLink from "./icon-link.svg";
 import iconJoined from "./icon-joined.svg";
-import { followersData } from "./Data";
+import iconFollowers from "./icon-followers.svg";
+import iconPhotoVideo from "./icon-photo-video.svg";
+import { followersData, photoVideoData } from "./Data";
 
 import "./LeftColumn.css";
 
@@ -46,8 +48,8 @@ function Description(props) {
   );
 }
 
-const LeftColumnContactsRowText = styled.a`
-  margin-left: 16px;
+const RowText = styled.a`
+  margin-left: 10px;
   font-family: HelveticaNeue;
   line-height: 28px;
   font-size: 14px;
@@ -67,12 +69,12 @@ function ContactsRow(props) {
     return (
       <div className="contacts-row">
         <img className="contacts-row-icon" src={props.icon} alt={props.icon} />
-        <LeftColumnContactsRowText
+        <RowText
           href={props.isLink ? "http://" + props.text : undefined}
           isLink={props.isLink}
         >
           {props.text}
-        </LeftColumnContactsRowText>
+        </RowText>
       </div>
     );
 }
@@ -89,6 +91,124 @@ function Contacts(props) {
 
 function Button(props) {
   return <div className="buttons-instance">{props.text}</div>;
+}
+
+function Follower(props) {
+  return (
+    <div className="followers-list-follower">
+      <img
+        className="followers-list-follower-image"
+        src={props.image}
+        alt={props.link}
+      />
+    </div>
+  );
+}
+
+function FollowerList(props) {
+  return (
+    <div className="followers-list">
+      <Follower
+        image={props.followers[0]["image"]}
+        link={props.followers[0]["link"]}
+      />
+      <Follower
+        image={props.followers[1]["image"]}
+        link={props.followers[1]["link"]}
+      />
+      <Follower
+        image={props.followers[2]["image"]}
+        link={props.followers[2]["link"]}
+      />
+      <Follower
+        image={props.followers[3]["image"]}
+        link={props.followers[3]["link"]}
+      />
+      <Follower
+        image={props.followers[4]["image"]}
+        link={props.followers[4]["link"]}
+      />
+      <Follower
+        image={props.followers[5]["image"]}
+        link={props.followers[5]["link"]}
+      />
+    </div>
+  );
+}
+
+function Followers(props) {
+  return (
+    <div className="followers">
+      <div className="followers-header">
+        <img
+          className="followers-header-image"
+          src={iconFollowers}
+          alt={iconFollowers}
+        />
+        <RowText href={"go_followers"} isLink={true}>
+          {props.followers["count"]} Followers you know
+        </RowText>
+      </div>
+      <FollowerList followers={props.followers["list"]} />
+    </div>
+  );
+}
+
+function PhotoVideo(props) {
+  return (
+    <div className="photovideos-list-photovid">
+      <img
+        className="photovideos-list-photovid-image"
+        src={props.image}
+        alt={props.link}
+      />
+    </div>
+  );
+}
+
+function PhotoVideoList(props) {
+  return (
+    <div className="photovideos-list">
+      <PhotoVideo
+        image={props.photoVideos[0]["image"]}
+        link={props.photoVideos[0]["link"]}
+      />
+      <PhotoVideo
+        image={props.photoVideos[1]["image"]}
+        link={props.photoVideos[1]["link"]}
+      />
+      <PhotoVideo
+        image={props.photoVideos[2]["image"]}
+        link={props.photoVideos[2]["link"]}
+      />
+      <PhotoVideo
+        image={props.photoVideos[3]["image"]}
+        link={props.photoVideos[3]["link"]}
+      />
+      <PhotoVideo
+        image={props.photoVideos[4]["image"]}
+        link={props.photoVideos[4]["link"]}
+      />
+    </div>
+  );
+}
+
+function PhotoVideos(props) {
+  return (
+    <div className="photovideos">
+      <div className="photovideos-header">
+        <img
+          className="photovideos-header-image"
+          src={iconPhotoVideo}
+          alt={iconPhotoVideo}
+        />
+        <RowText href={"go_photovideos"} isLink={true}>
+          {props.photoVideos["count"]} Photos and videos
+        </RowText>
+      </div>
+      <PhotoVideoList photoVideos={props.photoVideos["list"]} />
+    </div>
+  );
 }
 
 export function LeftColumn() {
@@ -109,7 +229,8 @@ export function LeftColumn() {
         <Button text="Tweet to" />
         <Button text="Message" />
       </div>
-      <div followers={followersData} />
+      <Followers followers={followersData} />
+      <PhotoVideos photoVideos={photoVideoData} />
     </div>
   );
 }

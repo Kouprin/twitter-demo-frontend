@@ -117,3 +117,47 @@
 
   color: #ffffff;
 }
+
+.LeftColumn .followers {
+  margin-top: 16px;
+  display: block;
+}
+
+.LeftColumn .followers-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.LeftColumn .followers-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.LeftColumn .followers-list-follower {
+  margin-right: 4px;
+}
+
+.LeftColumn .photovideos {
+  margin-top: 16px;
+  display: block;
+}
+
+.LeftColumn .photovideos-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.LeftColumn .photovideos-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.LeftColumn .photovideos-list-photovid {
+  margin-right: 4px;
+}

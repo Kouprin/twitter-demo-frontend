@@ -26,14 +26,28 @@ export const tabData = {
   media: { text: "Media", is_active: false }
 };
 
-export const followersData = [
-  { image: process.env.PUBLIC_URL + "follower.png", ref: "test_test" },
-  { image: process.env.PUBLIC_URL + "follower.png", ref: "test_test_2" },
-  { image: process.env.PUBLIC_URL + "follower.png", ref: "test_test_3" },
-  { image: process.env.PUBLIC_URL + "follower.png", ref: "test_test_4" },
-  { image: process.env.PUBLIC_URL + "follower.png", ref: "test_test_5" },
-  { image: process.env.PUBLIC_URL + "follower.png", ref: "test_test_6" }
-];
+export const followersData = {
+  count: 216,
+  list: [
+    { image: process.env.PUBLIC_URL + "follower.png", link: "test_test" },
+    { image: process.env.PUBLIC_URL + "follower.png", link: "test_test_2" },
+    { image: process.env.PUBLIC_URL + "follower.png", link: "test_test_3" },
+    { image: process.env.PUBLIC_URL + "follower.png", link: "test_test_4" },
+    { image: process.env.PUBLIC_URL + "follower.png", link: "test_test_5" },
+    { image: process.env.PUBLIC_URL + "follower.png", link: "test_test_6" }
+  ]
+};
+
+export const photoVideoData = {
+  count: 522,
+  list: [
+    { image: process.env.PUBLIC_URL + "photo.png", link: "photo" },
+    { image: process.env.PUBLIC_URL + "photo.png", link: "photo_2" },
+    { image: process.env.PUBLIC_URL + "photo.png", link: "photo_3" },
+    { image: process.env.PUBLIC_URL + "photo.png", link: "photo_4" },
+    { image: process.env.PUBLIC_URL + "photo.png", link: "photo_5" }
+  ]
+};
 
 export const tweetData = [
   {
