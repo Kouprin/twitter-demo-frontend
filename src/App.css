@@ -73,3 +73,13 @@ a {
   background: #ffffff;
   fill: solid;
 }
+
+.RightColumn {
+  position: absolute;
+  top: 492px;
+  left: calc(((100% - 1500px) * 0.3) + 455px + 599px);
+  width: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}

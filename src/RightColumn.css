@@ -1,0 +1,78 @@
+.RightColumn .follows {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: #ffffff;
+  fill: solid;
+}
+
+.RightColumn .follows-header {
+  margin-top: 16px;
+  margin-left: 16px;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.RightColumn .follows-who {
+  line-height: 22px;
+  font-size: 16px;
+  letter-spacing: -0.22px;
+  font-family: HelveticaNeue;
+  line-height: normal;
+  font-weight: 600;
+}
+
+.RightColumn .follows-divider {
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-bottom: 2px;
+  font-family: HelveticaNeue;
+  line-height: normal;
+  font-size: 8px;
+}
+
+.RightColumn .follows-follow {
+  margin: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.RightColumn .follows-follow-description {
+  width: 100%;
+  margin-left: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start;
+}
+
+.RightColumn .follows-follow-description-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: flex-end;
+}
+
+.RightColumn .follows-center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.RightColumn .follows-people {
+  margin-left: 4px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.RightColumn .follows-people-image {
+  padding: 8px;
+}

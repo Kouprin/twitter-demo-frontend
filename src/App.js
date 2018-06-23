@@ -7,6 +7,7 @@ import { Cover } from "./Cover";
 import { Statistics } from "./Statistics";
 import { LeftColumn } from "./LeftColumn";
 import { Middle } from "./Middle";
+import { RightColumn } from "./RightColumn";
 import "./App.css";
 
 function Page(props) {
@@ -17,6 +18,7 @@ function Page(props) {
       <Statistics />
       <LeftColumn />
       <Middle />
+      <RightColumn />
     </div>
   );
 }

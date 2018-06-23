@@ -49,6 +49,27 @@ export const photoVideoData = {
   ]
 };
 
+export const followData = [
+  {
+    image: process.env.PUBLIC_URL + "follow.png",
+    author: "AppleInsider",
+    isVerified: false,
+    authorShort: "@appleinsider"
+  },
+  {
+    image: process.env.PUBLIC_URL + "follow.png",
+    author: "Creocode",
+    isVerified: true,
+    authorShort: "@creocode"
+  },
+  {
+    image: process.env.PUBLIC_URL + "follow.png",
+    author: "Epiphany Search",
+    isVerified: false,
+    authorShort: "@Epiph…"
+  }
+];
+
 export const tweetData = [
   {
     isPinned: true,
