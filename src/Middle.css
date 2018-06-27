@@ -5,28 +5,6 @@
   background: #ffffff;
 }
 
-.Middle .tab-nav {
-  margin: 12px 20px 8px 16px;
-  font-family: HelveticaNeue;
-  line-height: normal;
-  font-size: 18px;
-  letter-spacing: -0.1px;
-  font-weight: 600;
-
-  color: #1da1f2;
-}
-
-.Middle .tab-nav-active {
-  margin: 12px 20px 8px 16px;
-  font-family: HelveticaNeue;
-  line-height: normal;
-  font-size: 18px;
-  letter-spacing: -0.1px;
-  font-weight: 600;
-
-  color: #000000;
-}
-
 .Middle .tweet-line {
   height: 1px;
   background: #e1e8ed;

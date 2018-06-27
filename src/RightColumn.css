@@ -56,6 +56,7 @@
   flex-direction: row;
   justify-content: left;
   align-items: flex-end;
+  text-decoration: none;
 }
 
 .RightColumn .follows-center {
@@ -93,6 +94,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  text-decoration: none;
 }
 
 .RightColumn .about {

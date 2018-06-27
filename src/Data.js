@@ -5,81 +5,57 @@ import iconMessages from "./icon-messages.svg";
 
 import avatarMid from "./avatar-mid.svg";
 
-export const headerData = {
-  home: { icon: iconHome, text: "Home" },
-  moments: { icon: iconMoments, text: "Moments" },
-  notifications: { icon: iconNotifications, text: "Notifications" },
-  messages: { icon: iconMessages, text: "Messages" }
-};
+export const headerData = [
+  { icon: iconHome, text: "Home", whereTo: "/" },
+  { icon: iconMoments, text: "Moments", whereTo: "/i/moments" },
+  {
+    icon: iconNotifications,
+    text: "Notifications",
+    whereTo: "/i/notifications"
+  },
+  {
+    icon: iconMessages,
+    text: "Messages",
+    whereTo: "#"
+  }
+];
 
-const checkActiveMain = (match, location) => {
-  if (!location) return false;
-  const { pathname } = location;
-  return pathname === "/EveryInteract";
-};
-
-const checkActiveFollowing = (match, location) => {
-  if (!location) return false;
-  const { pathname } = location;
-  return pathname === "/EveryInteract/following";
-};
-
-const checkActiveFollowers = (match, location) => {
-  if (!location) return false;
-  const { pathname } = location;
-  return pathname === "/EveryInteract/followers";
-};
-
-const checkActiveLikes = (match, location) => {
-  if (!location) return false;
-  const { pathname } = location;
-  return pathname === "/EveryInteract/likes";
-};
-
-const checkActiveLists = (match, location) => {
-  if (!location) return false;
-  const { pathname } = location;
-  return pathname === "/EveryInteract/lists";
-};
-
-export const statisticsData = {
-  tweets: {
+export const statisticsData = [
+  {
     text: "Tweets",
     count: "8,058",
-    checkActive: checkActiveMain,
     whereTo: "/"
   },
-  following: {
+  {
     text: "Following",
     count: "721",
-    checkActive: checkActiveFollowing,
     whereTo: "following"
   },
-  followers: {
+  {
     text: "Followers",
     count: "1,815",
-    checkActive: checkActiveFollowers,
     whereTo: "followers"
   },
-  likes: {
+  {
     text: "Likes",
     count: "460",
-    checkActive: checkActiveLikes,
     whereTo: "likes"
   },
-  lists: {
+  {
     text: "Lists",
     count: "2",
-    checkActive: checkActiveLists,
     whereTo: "lists"
   }
-};
+];
 
-export const tabData = {
-  tweets: { text: "Tweets", is_active: true },
-  replies: { text: "Tweets & replies", is_active: false },
-  media: { text: "Media", is_active: false }
-};
+export const tabData = [
+  { text: "Tweets", whereTo: "/" },
+  { text: "Tweets & replies", whereTo: "with_replies" },
+  { text: "Media", whereTo: "media" }
+];
+
+export const descriptionTextData =
+  "UX Design studio focussed problem solving creativity. Design to us is how can we make things *work* amazing.";
 
 export const followersData = {
   count: 216,

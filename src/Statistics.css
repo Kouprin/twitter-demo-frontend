@@ -10,9 +10,8 @@
 
 .Statistics .nav-pair {
   display: flex;
-  margin-left: 4px;
-  margin-right: 4px;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
   flex-direction: column;
   text-decoration: none;
 }
@@ -36,23 +35,6 @@
   display: flex;
   flex-basis: 20%;
   justify-content: flex-start;
-}
-
-.Statistics .menu-follow {
-  background: #ffffff;
-  border-radius: 100px;
-  margin: 12px;
-  padding: 8px;
-  border: 1px solid #1da1f2;
-  box-sizing: border-box;
-  border-radius: 100px;
-  font-family: HelveticaNeue;
-  line-height: normal;
-  font-size: 14px;
-  font-weight: 600;
-  text-align: center;
-  width: 100px;
-  color: #1da1f2;
 }
 
 .Statistics .menu-more {

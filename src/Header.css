@@ -6,18 +6,11 @@
 
 .Header .nav-pair {
   display: flex;
+  padding-left: 16px;
+  padding-right: 16px;
   justify-content: center;
-  margin: 14px;
-}
-
-.Header .nav-pair-text {
-  margin-left: 6px;
-  font-family: HelveticaNeue;
-  font-size: 13px;
-  font-weight: 600;
-  line-height: normal;
-  letter-spacing: 0.01px;
-  color: #667580;
+  align-items: center;
+  text-decoration: none;
 }
 
 .Header .menu {

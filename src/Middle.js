@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import { NavLink } from "react-router-dom";
 
 import iconPinned from "./icon-pinned.svg";
 import iconComments from "./icon-comments.svg";
@@ -12,26 +13,27 @@ import { tabData, tweetData } from "./Data";
 
 import "./Middle.css";
 
-function TabNav(props) {
-  if (props.active) return <div className="tab-nav-active">{props.text}</div>;
-  else return <div className="tab-nav">{props.text}</div>;
-}
+const TabNav = styled(NavLink)`
+  margin: 12px 20px 8px 16px;
+  font-family: HelveticaNeue;
+  line-height: normal;
+  font-size: 18px;
+  letter-spacing: -0.1px;
+  font-weight: 600;
+
+  color: #cc8500;
+  &.active,
+  &:hover {
+    color: #000000;
+  }
+`;
 
 function Tab(props) {
   return (
     <div className="tab">
-      <TabNav
-        text={tabData["tweets"]["text"]}
-        active={tabData["tweets"]["is_active"]}
-      />
-      <TabNav
-        text={tabData["replies"]["text"]}
-        active={tabData["replies"]["is_active"]}
-      />
-      <TabNav
-        text={tabData["media"]["text"]}
-        active={tabData["media"]["is_active"]}
-      />
+      {tabData.map(tabItem => (
+        <TabNav to={tabItem["whereTo"]}>{tabItem["text"]}</TabNav>
+      ))}
     </div>
   );
 }
@@ -195,9 +197,7 @@ export function Middle(props) {
   return (
     <div className="Middle">
       <Tab />
-      <Tweet data={tweetData[0]} />
-      <Tweet data={tweetData[1]} />
-      <Tweet data={tweetData[2]} />
+      {tweetData.map(tweetItem => <Tweet data={tweetItem} />)}
     </div>
   );
 }
