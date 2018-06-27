@@ -14,69 +14,7 @@
   margin-right: 4px;
   justify-content: space-around;
   flex-direction: column;
-}
-
-.Statistics .nav-pair-text {
-  padding-top: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
-  font-family: HelveticaNeue;
-  font-weight: 600;
-  line-height: 21px;
-  font-size: 12px;
-  text-align: center;
-  letter-spacing: 0.01px;
-
-  color: #788a98;
-}
-
-.Statistics .nav-pair-count {
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-bottom: 4px;
-  font-family: HelveticaNeue;
-  font-weight: 600;
-  line-height: 21px;
-  font-size: 18px;
-  text-align: center;
-  letter-spacing: 0.01px;
-
-  color: #788a98;
-}
-
-.Statistics .nav-pair-active-text {
-  padding-top: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  font-family: HelveticaNeue;
-  font-weight: 600;
-  line-height: 21px;
-  font-size: 12px;
-  text-align: center;
-  letter-spacing: 0.01px;
-
-  color: #707e88;
-}
-
-.Statistics .nav-pair-active-count {
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-bottom: 3px;
-  font-family: HelveticaNeue;
-  font-weight: 600;
-  line-height: 21px;
-  font-size: 18px;
-  text-align: center;
-  letter-spacing: 0.01px;
-
-  color: #1da1f2;
-}
-
-.Statistics .nav-pair-active-bar {
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 4px;
-  background: #1da1f2;
+  text-decoration: none;
 }
 
 .Statistics .nav-tweet {

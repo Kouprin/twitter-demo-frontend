@@ -13,6 +13,14 @@ a {
   color: #1da1f2;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
+}
+
 .Desktop {
   position: relative;
   width: 100%;

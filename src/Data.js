@@ -12,12 +12,67 @@ export const headerData = {
   messages: { icon: iconMessages, text: "Messages" }
 };
 
+const checkActiveMain = (match, location) => {
+  if (!location) return false;
+  const { pathname } = location;
+  return pathname === "/EveryInteract";
+};
+
+const checkActiveFollowing = (match, location) => {
+  if (!location) return false;
+  const { pathname } = location;
+  return pathname === "/EveryInteract/following";
+};
+
+const checkActiveFollowers = (match, location) => {
+  if (!location) return false;
+  const { pathname } = location;
+  return pathname === "/EveryInteract/followers";
+};
+
+const checkActiveLikes = (match, location) => {
+  if (!location) return false;
+  const { pathname } = location;
+  return pathname === "/EveryInteract/likes";
+};
+
+const checkActiveLists = (match, location) => {
+  if (!location) return false;
+  const { pathname } = location;
+  return pathname === "/EveryInteract/lists";
+};
+
 export const statisticsData = {
-  tweets: { text: "Tweets", count: "8,058", isActive: true },
-  following: { text: "Following", count: "721", isActive: false },
-  followers: { text: "Followers", count: "1,815", isActive: false },
-  likes: { text: "Likes", count: "460", isActive: false },
-  lists: { text: "Lists", count: "2", isActive: false }
+  tweets: {
+    text: "Tweets",
+    count: "8,058",
+    checkActive: checkActiveMain,
+    whereTo: "/"
+  },
+  following: {
+    text: "Following",
+    count: "721",
+    checkActive: checkActiveFollowing,
+    whereTo: "following"
+  },
+  followers: {
+    text: "Followers",
+    count: "1,815",
+    checkActive: checkActiveFollowers,
+    whereTo: "followers"
+  },
+  likes: {
+    text: "Likes",
+    count: "460",
+    checkActive: checkActiveLikes,
+    whereTo: "likes"
+  },
+  lists: {
+    text: "Lists",
+    count: "2",
+    checkActive: checkActiveLists,
+    whereTo: "lists"
+  }
 };
 
 export const tabData = {
