@@ -5,6 +5,11 @@
   background: #ffffff;
 }
 
+.Middle .tweet :hover {
+  background: #f6f6f6;
+  cursor: pointer;
+}
+
 .Middle .tweet-line {
   height: 1px;
   background: #e1e8ed;
@@ -23,6 +28,17 @@
   justify-content: flex-start;
   align-items: flex-end;
   margin: 8px;
+}
+
+.Middle .tweet-data-left-avatar {
+  border-radius: 100px;
+  background: #ffffff;
+  border: 1px solid #e7ecf0;
+  box-sizing: border-box;
+}
+
+.Middle .tweet-data-left :hover {
+  background: #ffffff;
 }
 
 .Middle .tweet-data-left-pinned {

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 import oval from "./oval.svg";
 
@@ -95,11 +95,11 @@ export function Statistics() {
       </div>
       <div className="menu">
         <Follow>Follow</Follow>
-        <div className="menu-more">
+        <Link className="menu-more" to="#">
           <img className="menu-more-oval" src={oval} alt="oval" />
           <img className="menu-more-oval" src={oval} alt="oval" />
           <img className="menu-more-oval" src={oval} alt="oval" />
-        </div>
+        </Link>
       </div>
     </div>
   );

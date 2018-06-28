@@ -10,6 +10,7 @@ import { followData, trendsData } from "./Data";
 import "./RightColumn.css";
 
 const SmallText = styled.div`
+  color: #e69600;
   font-family: HelveticaNeue;
   line-height: normal;
   font-size: 12px;
@@ -52,7 +53,7 @@ const DescriptionLink = styled(Link)`
   &:hover {
     ${Author} {
       text-decoration: underline;
-      color: #333333;
+      color: #e69600;
     }
   }
 `;
@@ -176,6 +177,7 @@ const TrendText = styled.div`
   line-height: 20px;
   font-size: 15px;
   font-weight: 600;
+  color: #e69600;
 `;
 
 const TextSmall = styled.div`

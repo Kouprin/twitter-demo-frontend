@@ -21,7 +21,7 @@ const TabNav = styled(NavLink)`
   letter-spacing: -0.1px;
   font-weight: 600;
 
-  color: #cc8500;
+  color: #e69600;
   &.active,
   &:hover {
     color: #000000;
@@ -39,31 +39,24 @@ function Tab(props) {
 }
 
 function TweetLeft(props) {
-  if (props.pinned)
-    return (
-      <div className="tweet-data-left">
+  return (
+    <div className="tweet-data-left">
+      {props.pinned ? (
         <img
           className="tweet-data-left-pinned"
           src={iconPinned}
           alt="iconPinned"
         />
-        <img
-          className="tweet-data-left-avatar"
-          src={props.avatar}
-          alt="avatarMid"
-        />
-      </div>
-    );
-  else
-    return (
-      <div className="tweet-data-left">
-        <img
-          className="tweet-data-left-avatar"
-          src={props.avatar}
-          alt="avatarMid"
-        />
-      </div>
-    );
+      ) : (
+        <div />
+      )}
+      <img
+        className="tweet-data-left-avatar"
+        src={props.avatar}
+        alt="avatarMid"
+      />
+    </div>
+  );
 }
 
 function TweetRightPinned(props) {
